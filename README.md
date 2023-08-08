@@ -1,26 +1,20 @@
 # MenuTouche
 Un menu très facilement configurable pour que vos nouveaux joueurs FiveM sachent quelle touche sert à quoi .
 
-# SQL 
+# Config 
 ```
-CREATE TABLE `MBilling` (
-  `id` int(255) NOT NULL,
-  `TargetIdentifier` varchar(255) NOT NULL,
-  `TargetName` varchar(255) NOT NULL,
-  `SenderIdentifier` varchar(255) NOT NULL,
-  `SenderName` varchar(255) NOT NULL,
-  `raison` varchar(255) NOT NULL,
-  `montant` int(255) NOT NULL,
-  `job` varchar(255) NOT NULL,
-  `status` int(1) NOT NULL DEFAULT 0,
-  `date` varchar(255) NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-ALTER TABLE `MBilling`
-  ADD PRIMARY KEY (`id`);
-
-ALTER TABLE `MBilling`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-COMMIT;
-
+Touche.Touches = {
+    {Touche = "F1" , Action = "Telephone"},
+    {Touche = "F2" , Action = "Inventaire"},
+    {Touche = "F5" , Action = "Menu F5"},
+    {Touche = "F6" , Action = "Menu Job"},
+    {Touche = "F7" , Action = "Menu Gang / Organisation"},
+    {Touche = "U" , Action = "Fermer / Ouvrir le véhicule"},
+    {Touche = "K" , Action = "Ouvrir le coffre"},
+    {Touche = "ALT" , Action = "Context Menu"},
+    --{Touche = "F10" , Action = "Menu Admin"},
+}
+Command.Command = "touche" --Commande pour ouvrir le menu touche
+--Si vous ne voulez pas de touche pour ouvrir le menu, remplacer le touche par nil  
+Command.ToucheOpen = 182 -- L Touche par défaut https://docs.fivem.net/docs/game-references/controls/
 ```
